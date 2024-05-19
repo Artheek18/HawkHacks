@@ -2,90 +2,89 @@
 
 /* Center the container with a gradient background */
 .signup-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: linear-gradient(to right, #6a11cb, #2575fc);
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    box-sizing: border-box;
-  }
-  
-  /* Card style for the signup form */
-  .signup-card {
-    background: #fff;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 700px; /* Increased max-width for better use of space */
-    margin: 20px;
-  }
-  
-  /* Center the title and add margin */
-  .signup-card h3 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
-  }
-  
-  /* Container for input and icon */
-  .input-container {
-    position: relative;
-    margin-bottom: 15px; /* Added margin for better spacing */
-  }
-  
-  /* Styles for input fields */
-  .form-control {
-    width: 100%;
-    padding: 12px 12px 12px 40px;
-    border-radius: 5px;
-    border: 1px solid #ced4da;
-    box-shadow: none;
-    transition: border-color 0.3s;
-  }
-  
-  /* Icon styles inside the input */
-  .input-container .icon {
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 18px; /* Increased font size for better visibility */
-    color: #666;
-  }
-  
-  /* Focus state for input fields */
-  .form-control:focus {
-    border-color: #007bff;
-    outline: none;
-  }
-  
-  /* Button styles */
-  .btn-primary {
-    background-color: #007bff;
-    border: none;
-    border-radius: 5px;
-    padding: 12px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    color: white;
-    text-align: center;
-  }
-  
-  /* Hover effect for the button */
-  .btn-primary:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Style for the message */
-  .forgot-password {
-    text-align: center;
-    margin-top: 20px;
-    color: #666;
-    font-size: 14px;
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Card style for the signup form */
+.signup-card {
+  background: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 900px; /* Increased max-width for better use of space */
+  margin: 20px;
+}
+
+/* Center the title and add margin */
+.signup-card h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+/* Container for input and icon */
+.input-container {
+  position: relative;
+  margin-bottom: 15px; /* Added margin for better spacing */
+}
+
+/* Styles for input fields */
+.form-control {
+  width: 100%;
+  padding: 12px 12px 12px 40px;
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+  box-shadow: none;
+  transition: border-color 0.3s;
+}
+
+/* Icon styles inside the input */
+.input-container .icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px; /* Increased font size for better visibility */
+  color: #666;
+}
+
+/* Focus state for input fields */
+.form-control:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Button styles */
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  padding: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  color: white;
+  text-align: center;
+}
+
+/* Hover effect for the button */
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Style for the message */
+.forgot-password {
+  text-align: center;
+  margin-top: 20px;
+  color: #666;
+  font-size: 14px;
+}

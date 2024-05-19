@@ -11,8 +11,6 @@ export default class SignUp extends Component {
       email: "",
       password: "",
       message: "",
-      gender: "",
-      location: "",
       phoneNumber: "",
     };
   }
@@ -29,8 +27,6 @@ export default class SignUp extends Component {
       lastName,
       email,
       password,
-      gender,
-      location,
       phoneNumber,
     } = this.state;
 
@@ -40,8 +36,6 @@ export default class SignUp extends Component {
         lastName,
         email,
         password,
-        gender,
-        location,
         phoneNumber,
       });
 
@@ -59,8 +53,6 @@ export default class SignUp extends Component {
       email,
       password,
       message,
-      gender,
-      location,
       phoneNumber,
     } = this.state;
 
@@ -130,42 +122,12 @@ export default class SignUp extends Component {
           </div>
 
           <div className="mb-3">
-            <label>Gender</label>
+            <label>Emergency Contact</label>
             <div className="input-container">
               <input
                 type="text"
                 className="form-control"
-                placeholder="Gender"
-                name="gender"
-                value={gender}
-                onChange={this.handleChange}
-              />
-              <span className="icon">&#x1F4DD;</span> {/* Pencil icon */}
-            </div>
-          </div>
-
-          <div className="mb-3">
-            <label>Location</label>
-            <div className="input-container">
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Location"
-                name="location"
-                value={location}
-                onChange={this.handleChange}
-              />
-              <span className="icon">&#x1F4CD;</span> {/* Location icon */}
-            </div>
-          </div>
-
-          <div className="mb-3">
-            <label>Phone Number</label>
-            <div className="input-container">
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Phone Number"
+                placeholder="Enter number"
                 name="phoneNumber"
                 value={phoneNumber}
                 onChange={this.handleChange}
