@@ -1,0 +1,97 @@
+/* General Styles */
+.file-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin: 0 auto; /* Center horizontally */
+  max-width: 500px; /* Optional for responsiveness */
+  border-radius: 5px; /* Subtle rounded corners */
+  background-color: #f7f7f7; /* Light background for better contrast */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Forms and File Input */
+.file-upload form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.file-upload label {
+  display: inline-block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #666; /* Lighter text for better contrast */
+  cursor: pointer;
+}
+
+.file-upload input[type="file"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff; /* Light background for input field */
+}
+
+/* Submit Buttons */
+.file-upload button[type="submit"] {
+  align-self: flex-end; /* Right-align buttons */
+  background-color: #4caf50; /* Green primary color */
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.file-upload button[type="submit"]:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+/* Results Section */
+.file-upload h2 {
+  margin-top: 0; /* Remove default top margin */
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+.file-upload a {
+  color: #4caf50; /* Green for download link */
+  text-decoration: none;
+  font-weight: bold; /* Emphasize download link */
+  transition: color 0.2s ease-in-out;
+}
+
+.file-upload a:hover {
+  color: #45a049; /* Darker green on hover */
+}
+
+/* Error Messages */
+.file-upload p.error {
+  color: red;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* Optional Drag-and-Drop Area (Improved Styles) */
+.drag-drop {
+  background-color: #f0f0f0; /* Light gray background */
+  border: 2px dashed #ccc; /* Thicker dashed border for emphasis */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px;
+  text-align: center; /* Center text for easier reading */
+  margin: 0 auto; /* Center horizontally */
+  width: 50%; /* Adjust as needed for your layout */
+  min-height: 150px; /* Minimum height for better visibility */
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+}
+
+.drag-drop p {
+  font-size: 16px; /* Clearer font size for instructions */
+  color: #666; /* Lighter text for better contrast */
+  margin-bottom: 10px; /* Spacing between text and drop zone */
+}

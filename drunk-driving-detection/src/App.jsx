@@ -1,162 +1,52 @@
-// App.js
+import React from "react";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
-import React, { useState } from 'react';
-import axios from 'axios';
-import './App.css';
+import Login from "./components/login.jsx";
+import SignUp from "./components/signup.jsx";
+import FileUpload from "./components/mainpage.jsx"
 
-const StyledTextInput = ({
-  placeholder,
-  value,
-  onChangeText,
-  onFocus,
-  onBlur,
-  isFocused
-}) => {
+function App() {
   return (
-    <div className="inputContainer">
-      <input
-        className={isFocused ? 'input inputFocused' : 'input'}
-        type="text"
-        placeholder={placeholder}
-        value={value}
-        onChange={(e) => onChangeText(e.target.value)}
-        onFocus={onFocus}
-        onBlur={onBlur}
-      />
-    </div>
-  );
-};
+    <Router>
+      <div className="App">
+        <nav className="navbar navbar-expand-lg navbar-light fixed-top">
+          <div className="container">
+            <Link className="navbar-brand" to={"/sign-in"}>
+              Steady Wheel
+              
+            </Link>
+            <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
+              <ul className="navbar-nav ml-auto">
+                <li className="nav-item">
+                  <Link className="nav-link" to={"/sign-in"}>
+                    Login
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to={"/sign-up"}>
+                    Sign up
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
 
-const App = () => {
-  const [name, setName] = useState('');
-  const [phoneto, setPhoneto] = useState('');
-  const [problem, setProblem] = useState('');
-  const [age, setAge] = useState('');
-  const [location, setLocation] = useState('');
-  const [gender, setGender] = useState('');
-  const [message, setMessage] = useState('');
-  const [textVisible, setTextVisible] = useState(true);
-  const [isFocused, setIsFocused] = useState({
-    name: false,
-    phoneto: false,
-    problem: false,
-    age: false,
-    location: false,
-    gender: false,
-  });
-
-  const inputRefs = {
-    name: React.createRef(),
-    phoneto: React.createRef(),
-    problem: React.createRef(),
-    age: React.createRef(),
-    location: React.createRef(),
-    gender: React.createRef(),
-  };
-
-  const handleFocus = (field) => {
-    setIsFocused((prev) => ({
-      ...prev,
-      [field]: true,
-    }));
-  };
-
-  const handleBlur = (field) => {
-    setIsFocused((prev) => ({
-      ...prev,
-      [field]: false,
-    }));
-  };
-
-  const handleSubmit = async () => {
-    try {
-      const response = await axios.post('http://127.0.0.1:5000/post-data', {
-        name,
-        phoneto,
-        problem,
-        age,
-        location,
-        gender,
-      });
-      setMessage(response.data.message);
-      setTextVisible(true);
-    } catch (error) {
-      console.error(error);
-      setMessage('Error submitting data');
-      setTextVisible(true);
-    }
-  };
-
-  const handleTextPress = () => {
-    setTextVisible(false);
-  };
-
-  return (
-    <div className="app">
-    <header className="header">
-      <h1>Create Profile</h1>
-    </header>
-    <div className="container">
-      <StyledTextInput
-        placeholder="Name"
-        value={name}
-        onChangeText={setName}
-        onFocus={() => handleFocus('name')}
-        onBlur={() => handleBlur('name')}
-        isFocused={isFocused.name}
-      />
-      <StyledTextInput
-        placeholder="Phone To"
-        value={phoneto}
-        onChangeText={setPhoneto}
-        onFocus={() => handleFocus('phoneto')}
-        onBlur={() => handleBlur('phoneto')}
-        isFocused={isFocused.phoneto}
-      />
-      <StyledTextInput
-        placeholder="Problem"
-        value={problem}
-        onChangeText={setProblem}
-        onFocus={() => handleFocus('problem')}
-        onBlur={() => handleBlur('problem')}
-        isFocused={isFocused.problem}
-      />
-      <StyledTextInput
-        placeholder="Age"
-        value={age}
-        onChangeText={setAge}
-        onFocus={() => handleFocus('age')}
-        onBlur={() => handleBlur('age')}
-        isFocused={isFocused.age}
-      />
-      <StyledTextInput
-        placeholder="Location"
-        value={location}
-        onChangeText={setLocation}
-        onFocus={() => handleFocus('location')}
-        onBlur={() => handleBlur('location')}
-        isFocused={isFocused.location}
-      />
-      <StyledTextInput
-        placeholder="Gender"
-        value={gender}
-        onChangeText={setGender}
-        onFocus={() => handleFocus('gender')}
-        onBlur={() => handleBlur('gender')}
-        isFocused={isFocused.gender}
-      />
-      <button className="submitBtn" onClick={handleSubmit}>
-        Submit
-      </button>
-      {message && textVisible && (
-        <div className="message" onClick={handleTextPress}>
-          {message}
+        <div className="auth-wrapper">
+          <div className="auth-inner">
+            <Routes>
+              <Route exact path="/" element={<Login />} />
+              <Route path="/sign-in" element={<Login />} />
+              <Route path="/sign-up" element={<SignUp />} />
+              <Route path="/mainpage" element={<FileUpload />} />
+            </Routes>
+          </div>
         </div>
-      )}
       </div>
-    </div>
-    
+    </Router>
   );
-};
+}
 
 export default App;
