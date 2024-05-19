@@ -1,10 +1,21 @@
 /* General Styles */
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
 .file-upload {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  margin: 0 auto; /* Center horizontally */
+  margin: 20px;
   max-width: 500px; /* Optional for responsiveness */
   border-radius: 5px; /* Subtle rounded corners */
   background-color: #f7f7f7; /* Light background for better contrast */
@@ -15,12 +26,19 @@
 .file-upload form {
   display: flex;
   flex-direction: column;
+  align-items: center; /* Center form elements */
   margin-bottom: 15px;
+}
+
+.file-upload .submit-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center elements in the submit form */
 }
 
 .file-upload label {
   display: inline-block;
-  margin-bottom: 5px;
+  margin-bottom: 10px; /* Add more space below the label */
   font-size: 14px;
   color: #666; /* Lighter text for better contrast */
   cursor: pointer;
@@ -28,6 +46,7 @@
 
 .file-upload input[type="file"] {
   padding: 10px;
+  margin-bottom: 10px; /* Add more space below the input */
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #fff; /* Light background for input field */
@@ -35,37 +54,40 @@
 
 /* Submit Buttons */
 .file-upload button[type="submit"] {
-  align-self: flex-end; /* Right-align buttons */
-  background-color: #4caf50; /* Green primary color */
+  background-color: #6781f8; /* Blue primary color */
   color: #fff;
   padding: 10px 20px;
+  margin-top: 10px; /* Add space above each button */
+  margin-bottom: 10px; /* Add space below each button */
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+  text-align: center;
 }
 
 .file-upload button[type="submit"]:hover {
-  background-color: #45a049; /* Darker green on hover */
+  background-color: #0c04ff; /* Darker blue on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
 /* Results Section */
 .file-upload h2 {
   margin-top: 0; /* Remove default top margin */
-  margin-bottom: 10px;
+  margin-bottom: 20px; /* Add more space below the heading */
   font-size: 16px;
   color: #333;
 }
 
 .file-upload a {
-  color: #4caf50; /* Green for download link */
+  color: #6781f8; /* Blue for download link */
   text-decoration: none;
   font-weight: bold; /* Emphasize download link */
   transition: color 0.2s ease-in-out;
 }
 
 .file-upload a:hover {
-  color: #45a049; /* Darker green on hover */
+  color: #0c04ff; /* Darker blue on hover */
 }
 
 /* Error Messages */
@@ -82,7 +104,7 @@
   border-radius: 8px; /* Rounded corners */
   padding: 20px;
   text-align: center; /* Center text for easier reading */
-  margin: 0 auto; /* Center horizontally */
+  margin: 20px auto; /* Center horizontally and add top/bottom margin */
   width: 50%; /* Adjust as needed for your layout */
   min-height: 150px; /* Minimum height for better visibility */
   display: flex;

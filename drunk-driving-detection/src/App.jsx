@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 import Login from "./components/login.jsx";
 import SignUp from "./components/signup.jsx";
-import FileUpload from "./components/mainpage.jsx"
+import FileUpload from "./components/mainpage.jsx";
 
 function App() {
   return (
@@ -15,7 +15,6 @@ function App() {
           <div className="container">
             <Link className="navbar-brand" to={"/sign-in"}>
               Steady Wheel
-              
             </Link>
             <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
               <ul className="navbar-nav ml-auto">

@@ -19,7 +19,7 @@ function FileUpload() {
 
     try {
       console.log(window.localStorage.getItem("email"));
-      const response = await axios.post(
+      await axios.post(
         "http://localhost:5000/speed-limits",
         formData,
         {
@@ -43,7 +43,7 @@ function FileUpload() {
 
     try {
       console.log(window.localStorage.getItem("email"));
-      const response = await axios.post(
+      await axios.post(
         "http://localhost:5000/test-upload",
         formData,
         {
@@ -67,7 +67,7 @@ function FileUpload() {
 
     try {
       console.log(window.localStorage.getItem("email"));
-      const response = await axios.post(
+      await axios.post(
         "http://localhost:5000/video-upload",
         formData,
         {
@@ -85,26 +85,29 @@ function FileUpload() {
   };
 
   return (
-    <div className="file-upload">
-      <form onSubmit={handleSubmit}>
-        <input type="file" onChange={handleFileChange} />
-        <button type="submit">Upload Train</button>
-      </form>
-      <form onSubmit={uploadTest}>
-        <input type="file" onChange={handleFileChange} />
-        <button type="submit">Upload Test</button>
-      </form>
-      <form onSubmit={uploadVid}>
-        <button type="submit">Upload Video</button>
-      </form>
-      {error && <p style={{ color: "red" }}>{error}</p>}
-      <div>
-        <h2>Results:</h2>
-        {downloadLink && (
-          <a href={downloadLink} download="results.txt">
-            Download Results
-          </a>
-        )}
+    <div className="main-container">
+      <div className="file-upload">
+        <form onSubmit={handleSubmit} className="file-form">
+          <input type="file" onChange={handleFileChange} />
+          <button type="submit">Upload Train</button>
+        </form>
+        <form onSubmit={uploadTest} className="file-form">
+          <input type="file" onChange={handleFileChange} />
+          <button type="submit">Upload Test</button>
+        </form>
+        <form onSubmit={uploadVid} className="submit-form">
+          <input type="file" onChange={handleFileChange} />
+          <button type="submit">Submit</button>
+        </form>
+        {error && <p style={{ color: "red" }}>{error}</p>}
+        <div>
+          <h2>Results:</h2>
+          {downloadLink && (
+            <a href={downloadLink} download="results.txt">
+              Download Results
+            </a>
+          )}
+          </div>
       </div>
     </div>
   );
